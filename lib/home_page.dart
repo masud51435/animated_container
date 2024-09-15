@@ -13,16 +13,18 @@ class HomePage extends StatelessWidget {
         title: const Text('Animated Container'),
       ),
       body: Center(
-        child: Obx(() => AnimatedContainer(
-              duration: const Duration(seconds: 1),
-              curve: Curves.fastOutSlowIn,
-              height: controller.height.value,
-              width: controller.width.value,
-              decoration: BoxDecoration(
-                color: controller.color.value,
-                borderRadius: controller.borderRadius.value,
-              ),
-            )),
+        child: Obx(
+          () => AnimatedContainer(
+            duration: const Duration(seconds: 1),
+            curve: Curves.fastOutSlowIn,
+            height: controller.height.value,
+            width: controller.width.value,
+            decoration: BoxDecoration(
+              color: controller.color.value,
+              borderRadius: controller.borderRadius.value,
+            ),
+          ),
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => controller.animate(),
